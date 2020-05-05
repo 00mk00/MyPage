@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Margo Kroyter</title>
+    <link rel="stylesheet" type="text/css" href="res/styles/main.css">
+    <style>
+/*
+Palette colors
+DarkBlue    #194977
+Blue        #2697d9
+LightBlue   #33c6f2
+DarkYellow  #ffe135
+LightYellow #fefd1b
+White       #ffffff
+DarkGreen   #109755
+LightGreen  #15ffaa
+*/
+
+:root {
+    --color-primary: #E4CED0;
+    --color-secondary: #D3A9AB;
+    --color-text-dark: #203139;
+    --color-text-light: #255D6E;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+.page-block {
+    background: var(--color-text-dark);
+    height: auto;
+    min-height: 100vh;
+}
+.short-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.62fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        "photo name"
+        "photo about"
+        "links links";
+    overflow: hidden;
+    height: 100vh;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    margin: 0px;
+}
+.photo-block {
+    grid-area: photo;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px;
+}
+.photo-image {
+    width: 190px;
+    height: 190px;
+    border-radius: 20%;
+    background-image: url(https://i.pinimg.com/236x/6f/39/ce/6f39ce9b1a201a1aa3245cd467b2077e.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.name-block {
+    grid-area: name;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 300%;
+    color: var(--color-text-dark);
+}
+.about-me-block {
+    grid-area: about;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 16px;
+    font-size: 120%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.about-me-block>p {
+    max-width: 400px;
+    padding: 0px;
+    margin: 0px;
+}
+.links-block {
+    grid-area: links;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--color-secondary);
+}
+.links-block>a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+    margin: 16px;
+    color: #194977;
+    background: var(--secondary-primary);
+}
+
+.links-block>a.link-vk {
+    background: 
+        url(https://img.icons8.com/all/500/vk-com.png) 
+        no-repeat 50% / contain;
+}
+.links-block>a.link-facebook {
+    background: 
+        url(https://en.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png)
+        no-repeat 50% / contain;
+}
+.links-block>a.link-instagram {
+    background: url(https://torrentmac.org/pictures/ca9d357ab07a352a7d8119c124815177.png) 
+    no-repeat 50% / contain;
+}
+
+  
+ 
+#page2 
+{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0px;
+    background: var(--color-secondary);
+    color: var(--color-text-dark);
+    font-size: 2rem;
+}
+
+#page2 {
+    color: var(--color-text-dark);
+}
+
+.link-next {
+    display: inline-flex;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    border: var(--color-text-light) solid 2px;
+    align-self: center;
+    border-radius: 50%;
+}
+.link-next::after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border: var(--color-text-light) solid 12px;
+    border-top-width: 20px;
+    border-bottom-width: 0px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    left: 12px;
+    top: 18px;
+}
+
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+@media(max-width: 650px) {
+    .short-info {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "photo "
+            "name"
+            "about"
+            "links";
+        overflow: hidden;
+        height: auto;
+        min-height: 100vh;
+        background: var(--color-primary);
+        color: var(--color-text-light);
+        margin: 0px;
+    }
+    .photo-block {
+        grid-area: photo;
+        display: flex;
+        justify-content: center;
+    }
+    .name-block {
+        grid-area: name;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        font-size: 300%;
+        color: var(--color-secondary);
+    }
+    .about-me-block {
+        grid-area: about;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 16px;
+        font-size: 120%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .about-me-block>p {
+        max-width: 500px;
+        padding: 00px;
+        margin: 0px;
+    }
+}
+
+@media(max-width: 400px) {
+    .about-me-block {
+        justify-content: stretch;
+        min-width: 0px;
+    }
+    .links-block>a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 48px;
+        margin: 8px;
+        color: #194977;
+        background: var(--color-accent);
+    }
+}
+   .thumb img  {
+    border: 2px solid #D3A9AB; /* Рамка вокруг фотографии */
+    padding: 10px; /* Расстояние от картинки до рамки */
+    background: #203139; /* Цвет фона */
+    margin-right: 130px; /* Отступ справа */
+    margin-bottom: 20px; /* Отступ снизу */
+   }
+
+    </style>
+</head>
+
+<body>
+    <div id="page1" class="page-block">
+        <div class="short-info">
+            <div class="photo-block">
+                <div class="photo-image"></div>
+            </div>
+            <div class="name-block">
+                Margo K
+            </div>
+            <div class="about-me-block">
+                <p>
+                    Меня зовут Рита. На этом сайте вы можете ознакомиться с некоторыми моими работами. 
+                </p>
+                <a href="#page2" class="link-next"></a>
+            </div>
+            <div class="links-block">
+                <a href="https://vk.com/im?peers=248493180&sel=486829788" class="link-vk"></a>
+                <a href="https://www.facebook.com/profile.php?id=100012140641916" class="link-facebook"></a>
+                <a href="https://www.instagram.com/_rita_san_/?hl=ru" class="link-instagram"></a>
+                           </div>
+    
+        </div>
+    </div>
+    
+    <div id="page2" class="page-block">
+      
+        <p class="thumb">
+            <img src="https://sun9-3.userapi.com/c855532/v855532166/22e4b1/WzwQGh_ROus.jpg" alt="Фотография 1" width="315" height="315">
+            <img src="https://sun9-43.userapi.com/c856520/v856520166/1891f5/khby8Qg6nIM.jpg" alt="Фотография 2" width="315" height="315">
+            <img src="https://sun9-30.userapi.com/c206820/v206820166/10f90c/_7klQSN0uRM.jpg" alt="Фотография 4"width="315" height="315">
+            <img src="https://sun9-50.userapi.com/c857228/v857228166/18899e/ybRfHzgUrPs.jpg" alt="Фотография 1" width="315" height="315">
+        </p>
+        <p class="thumb">
+            
+        <img src="https://sun9-60.userapi.com/c206624/v206624166/1123ac/Y_1wbn9ffi4.jpg" alt="Фотография 1" width="390" height="670">
+            
+        </p>
+        </p>
+    </div>
+    
+</body>
+</html>
